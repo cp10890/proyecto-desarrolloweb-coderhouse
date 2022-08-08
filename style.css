@@ -15,6 +15,18 @@ h1{
 }
 header{
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 29%, rgba(106,129,255,1) 100%);
+    grid-area: header;
+}
+.index{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 198px, 300px, 1fr, 1fr, 206px;
+    grid-template-areas:
+    "header header"
+    "main-index main-index"
+    "main-index main-index"
+    "main-index main-index"
+    "footer footer";
 }
 nav{
     display: flex;
@@ -78,6 +90,7 @@ nav ul li:hover ul{
 .main-index{
     display: flex;
     flex-direction: column;
+    grid-area: main-index;
 }
 .img1-index img{
     width: 100%;
@@ -135,6 +148,7 @@ footer{
     align-items: center;
     padding: 50px;
     background: linear-gradient(0deg, rgba(133,152,255,1) 0%, rgba(255,255,255,1) 71%, rgba(255,255,255,1) 100%);
+    grid-area: footer;
 }
 .footer1{
     display: flex;
@@ -158,8 +172,23 @@ footer{
 }
 .redes img{
     margin: 0 10px;
+    width: 30px;
 }
 /*PAGINA NOSOTROS*/
+.pag-nosotros{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 198px, 300px, 1fr, 1fr, 206px;
+    grid-template-areas:
+    "header header"
+    "main-nos main-nos"
+    "main-nos main-nos"
+    "main-nos main-nos"
+    "footer footer";
+}
+.main-nos{
+    grid-area: main-nos;
+}
 .img1-nos img{
     width: 100%;
     display: block;
@@ -216,9 +245,20 @@ footer{
     margin: 20px;
 }
 /*PAGINA PROYECTOS*/
+.pag-proy{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 198px, 300px, 1fr, 1fr, 206px;
+    grid-template-areas:
+    "header header"
+    "main-proy main-proy"
+    "main-proy main-proy"
+    "main-proy main-proy"
+    "footer footer";
+}
 .main-proy{
     margin: 30px 30px 30px 30px;
-
+    grid-area: main-proy;
 }
 .menu-proy{
     display: flex;
@@ -237,7 +277,7 @@ footer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     margin: 0 auto;
     width: 100%;
 }
@@ -248,6 +288,19 @@ footer{
     margin: 10px;
 }
 /*PAGINA SERVICIOS*/
+.pag-serv{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 198px, 1fr, 1fr, 206px;
+    grid-template-areas:
+    "header header"
+    "main-serv main-serv"
+    "main-serv main-serv"
+    "footer footer";
+}
+.main-serv{
+    grid-area: main-serv;
+}
 .main-serv h2{
     margin: 20px;
 }
@@ -311,10 +364,79 @@ form{
 }
 fieldset{
     border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 fieldset div{
     width: 100%;
 }
 fieldset label{
     padding: 0 30px;
+}
+@media screen and (max-width:480px){
+    header img{
+        width: 70px;
+    }
+    body{
+        font-size: 0.8rem;
+    }
+    footer div img{
+        width: 30px;
+    }
+    footer div{
+        margin: 10px;
+    }
+    .logo-footer{
+        width: 100px;
+    }
+    .nues-emp div{
+        width: 450px;
+    }
+    .list-proy div{
+        width: 180px;
+    }
+    .menu-proy a{
+        font-size: 1rem;
+    }
+    .main-noti div{
+        margin: 30px 0;    
+    }
+    .main-noti iframe{
+        width:100%;
+    }
+    .fondo-cont div{
+        width: 80%;
+    }
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    header img{
+        width: 70px;
+    }
+    body{
+        font-size: 0.9rem;
+    }
+    footer div img{
+        width: 30px;
+    }
+    footer div{
+        margin: 10px;
+    }
+    .logo-footer{
+        width: 150px;
+    }
+    .nosotrosIndex{
+        flex-direction: column;
+        align-items: center;
+    }
+    .nosotrosIndex div{
+        width: 500px;
+    }
+    .nues-emp div{
+        width: 450px;
+    }
+    .menu-proy a{
+        font-size: 1rem;
+    }
 }
